@@ -2,9 +2,9 @@
 
 set -e
 
-mkdir ~/sqltextify
+mkdir -p ~/.sqltextify
 
-sql_tmpfile=$(mktemp ~/sqltextify/abc-script.XXXXXX)
+sql_tmpfile=$(mktemp ~/.sqltextify/abc-script.XXXXXX)
 
 sql=$(config sql)
 

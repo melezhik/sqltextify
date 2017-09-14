@@ -8,18 +8,30 @@ Wrapper for [sqltextify.pl](https://metacpan.org/pod/distribution/Sql-Textify/sc
 
 # USAGE
 
+Runs as task ( prefered way ):
+
     $ sparrow project create databases
-    $ sparrow task create databases users sqltextify
+    $ sparrow task add databases users sqltextify
     $ sparrow task ini databases/users
 
     ---
-      sql: select * from users
+
+      sql: select name, email from users
       args:
-        - conn: dbi:mysql:users
-        - username: admin
-        - password: test
+        - conn: DBI:mysql:database=accounts
+        - username: root
+        - password: secret123
+        - format: markdown
+    
 
     $ sparrow task run databases/users
+
+Runs as plugin:
+
+    $ sparrow plg run sqltextify \
+    --param sql='select name, email from users' -- \
+    --conn DBI:mysql:database=accounts \
+    --username root --password secret123
 
 # Plugin maintainer
 

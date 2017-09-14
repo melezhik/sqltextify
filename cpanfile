@@ -1,2 +1,2 @@
-requires "Sql::Textify";
+requires "Sql::Textify", ">= 0.05";
 
